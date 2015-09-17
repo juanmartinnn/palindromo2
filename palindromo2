@@ -1,0 +1,41 @@
+
+#include <iostream>
+#include <string.h>
+#include <stdlib.h>
+#include <stdio.h>
+
+
+int palindromo(char * inicio, char * final){
+
+
+if ((final - inicio) < 2)
+return 1;
+else
+if( (*inicio) != (*final) )
+return 0;
+else
+return palindromo(++inicio, --final);
+}
+
+int main()
+{
+char palabra[20];
+char * final;
+int cuenta;
+
+system("cls");
+
+printf("Ingrese su palara  ");
+gets(palabra);
+
+final=palabra + strlen(palabra) - 1;
+
+if (palindromo(palabra, final))
+printf("Es palindroma \n");
+else
+printf("No es palindroma \n");
+
+system("pause");
+printf ("Fin de la ejecucion.\n");
+return 0;
+}
